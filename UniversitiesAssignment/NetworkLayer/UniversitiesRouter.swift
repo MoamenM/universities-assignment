@@ -1,12 +1,11 @@
 //
-//  UserRouter.swift
+//  UniversitiesRouter.swift
 //  UniversitiesAssignment
 //
 //  Created by Mo'men Abd Elmageed on 03/05/2024.
 //
 
 import Foundation
-import Alamofire
 
 enum UniversitiesRouter: AppURLRequestConvertible {
     
@@ -34,4 +33,3 @@ enum UniversitiesRouter: AppURLRequestConvertible {
     }
     
 }
-

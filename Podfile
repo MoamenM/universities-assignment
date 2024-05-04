@@ -6,7 +6,7 @@ target 'UniversitiesAssignment' do
   use_frameworks!
 
    pod 'Alamofire'
-
+   pod 'RealmSwift'
 
   # Pods for UniversitiesAssignment
 

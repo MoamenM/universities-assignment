@@ -14,23 +14,31 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        networkLayer.request(UniversitiesRouter.getUniversities, decodeToType: [User].self) { result in
+        networkLayer.request(UniversitiesRouter.getUniversities, decodeToType: [University].self) { result in
             switch result {
-            case .success(let response):
-                print("response is: \(response.first?.name ?? "")")
+            case .success(let universities):
+                print("the first university name is: \(universities.first?.name ?? "")")
+                
+                let universities = universities.map { university in
+                    return UniversityObject(university: university)
+                }
+                RealmManager.default.updateList(universities)
+                
             case .failure(let error):
                 print("error is: \(error)")
             }
         }
     }
+    
+    
 
-
+    @IBAction func testDatabaseLayerButtonTapped(_ sender: Any) {
+        let universities = RealmManager.default.getList(type: UniversityObject.self)
+        print("universities count: \(universities?.count ?? -1)")
+        print("the first university name is: \(universities?.first?.name ?? "")")
+    }
+    
 }
 
 
 
-struct User: Codable {
-    var name: String
-    var country: String
-}
