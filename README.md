@@ -7,6 +7,12 @@ This repository contains the source code for the universities-assignment project
 <img width="1679" alt="Screenshot 2024-05-06 at 6 50 36 AM" src="https://github.com/MoamenM/universities-assignment/assets/11499145/29b47ec9-e45e-436e-8f44-cd8bc0d9aee1">
 
 
+## Application flow
+
+https://github.com/MoamenM/universities-assignment/assets/11499145/6de1ba92-e95a-40aa-9191-2965af4b1ac0
+
+
+
 ## Prerequisites
 
 - New version of Xcode
