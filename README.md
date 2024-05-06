@@ -4,6 +4,9 @@
 
 This repository contains the source code for the universities-assignment project. Follow the instructions below to build and run the project using Swift Package Manager (SPM).
 
+<img width="1679" alt="Screenshot 2024-05-06 at 6 50 36 AM" src="https://github.com/MoamenM/universities-assignment/assets/11499145/29b47ec9-e45e-436e-8f44-cd8bc0d9aee1">
+
+
 ## Prerequisites
 
 - New version of Xcode
