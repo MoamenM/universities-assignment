@@ -7,6 +7,7 @@
 
 import UIKit
 import UniversitiesList
+import UniversityDetails
 
 /// Manages the flow of the application and sets up the initial view hierarchy.
 class AppFlow {
@@ -18,7 +19,7 @@ class AppFlow {
     private var navigationController: UINavigationController
     
     /// The router for the universities list module.
-    var universitiesListRouter: UniversitiesListRouter
+    private var universitiesListRouter: UniversitiesListRouter
     
     
     /// Initializes a new instance of `AppFlow`.
@@ -37,14 +38,32 @@ class AppFlow {
         }
         
         let navigationController = UINavigationController()
-        let universitiesListViewController = universitiesListRouter.assembleModule(cellSelectedAction: { [weak self] university in
+        let viewController = universitiesListRouter.assembleModule(cellSelectedAction: { [weak self] university in
             guard let self = self else { return }
-            self.universitiesListRouter.refreshData()
+            self.showUniversityDetails(university: university)
         })
-        navigationController.viewControllers = [universitiesListViewController]
+        navigationController.viewControllers = [viewController]
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+    
+    
+    /**
+     Presents a view controller to display details of a university.
+
+     - Parameter university: The university object containing details to be displayed.
+     */
+    private func showUniversityDetails(university: University) {
+        let universityDetails = UniversityDetails(name: university.name, country: university.country,
+                                                  state: university.stateProvince, countryCode: university.alphaTwoCode,
+                                                  websiteAddress: university.webPages?.first)
+        let viewController = UniversityDetailsRouter.assembleModule(university: universityDetails, refreshDataAction: { [weak self] in
+            guard let self = self else { return }
+            self.universitiesListRouter.refreshData()
+        })
+        
+        universitiesListRouter.viewController?.present(viewController, animated: true)
     }
     
 }

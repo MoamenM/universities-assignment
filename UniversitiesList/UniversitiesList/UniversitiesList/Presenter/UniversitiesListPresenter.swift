@@ -63,7 +63,7 @@ class UniversitiesListPresenter: UniversitiesListPresenterProtocol, Universities
     
     /// Refreshes the data.
     func refreshData() {
-        print("Refresh Data")
+        fetcUniversitiesList()
     }
     
     /// Fetches the list of universities.
