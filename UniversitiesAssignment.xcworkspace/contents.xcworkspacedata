@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:AppUIKit/AppUIKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AppServices/AppServices.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UniversitiesList/UniversitiesList.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:UniversitiesAssignment/UniversitiesAssignment.xcodeproj">
+   </FileRef>
+</Workspace>
