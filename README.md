@@ -18,9 +18,11 @@ This repository contains the source code for the universities-assignment project
 
 1. Open the Xcode project file (`UniversitiesAssignment.xcworkspace`) in Xcode.
 
-2. Select the target you want to build.
+2. Install the needed dependencies via SPM 
 
-3. Build the project (Shortcut: `Command + B`).
+3. Select the target you want to build.
+
+4. Build the project (Shortcut: `Command + B`).
 
 ## Running
 
