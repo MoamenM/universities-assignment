@@ -20,7 +20,7 @@ public class UniversitiesListRouter: UniversitiesListRouterProtocol {
     
     
     /// Reference to the view controller associated with the router.
-    weak var viewController: UIViewController?
+    public weak var viewController: UIViewController?
     
     /// Reference to the presenter responsible for handling UI logic.
     private var presenter: UniversitiesListPresenter?
@@ -38,7 +38,6 @@ public class UniversitiesListRouter: UniversitiesListRouterProtocol {
     /// - Parameter cellSelectedAction: Closure to be executed when a cell is selected.
     /// - Returns: The assembled view controller for the universities list module.
     public func assembleModule(cellSelectedAction: ((_ university: University) -> Void)?) -> UIViewController {
-        self.cellSelectedAction = cellSelectedAction
         let bundlee = Bundle(for: UniversitiesListViewController.self)
         let viewController = UniversitiesListViewController(nibName: "UniversitiesListViewController", bundle: bundlee)
         let networkLayer = APIService()
@@ -48,6 +47,7 @@ public class UniversitiesListRouter: UniversitiesListRouterProtocol {
         viewController.presenter = presenter!
         interactor.presenter = presenter!
         self.viewController = viewController
+        self.cellSelectedAction = cellSelectedAction
         return viewController
     }
     

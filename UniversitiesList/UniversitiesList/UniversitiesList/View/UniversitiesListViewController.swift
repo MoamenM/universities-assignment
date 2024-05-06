@@ -33,7 +33,7 @@ class UniversitiesListViewController: UIViewController, UniversitiesListViewProt
     /// Called after the view has been loaded.
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         presenter.viewDidLoad()
     }
     
